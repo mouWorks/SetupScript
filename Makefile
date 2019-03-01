@@ -12,7 +12,7 @@ base:
 wget:
 	@echo ">>> getting wget"
 	brew install wget
-
+## TBD: this one is complicated
 powerline:
 	@echo ">>> Install Powerline"
 	./powerline.sh
