@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base powerline sublime travis kraken docker composer wget
+.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork
 
-all: powerline travis kraken docker composer sublime wget
+all: powerline travis kraken docker composer sublime wget slack postman fork
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -42,7 +42,22 @@ composer:
 	@echo ">>> Install composer"
 	./getComposer.sh &&  mv composer.phar /usr/local/bin/composer
 
+## Slack
+slack:
+	@echo ">>> Install Slack"
+	brew cask install slack
+
+## Postman the Api tool
+postman:
+	@echo ">>> Install Postman the Api tool"
+	brew cask install postman
+
+fork:
+	@echo ">>> Install Fork the git GUI client"
+	brew cask install fork
+
 ## Clean up Homebrew cask
 clean-up:
 	@echo ">>> Clean Up Homebrew Cask"
 	brew cask cleanup
+
