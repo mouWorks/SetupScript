@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias gcloud
+.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias gcloud terra
 
-all: powerline travis kraken docker composer sublime wget slack postman fork alias gcloud
+all: powerline travis kraken docker composer sublime wget slack postman fork alias gcloud terra
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -59,7 +59,7 @@ fork:
 ## Clean up Homebrew cask
 clean-up:
 	@echo ">>> Clean Up Homebrew Cask"
-	brew cask cleanup
+	brew cleanup
 
 ## Copy Local Alias Over
 alias:
@@ -70,3 +70,8 @@ alias:
 gcloud:
 	@echo ">>> Install Google Cloud SDK"
 	brew update && brew cask install google-cloud-sdk
+
+## Terraform
+terra:
+	@echo ">>> Install Terraform"
+	brew install terraform
