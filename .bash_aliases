@@ -1,0 +1,10 @@
+alias nah="git reset --hard && git clean -df"
+alias gs="git status"
+alias pl=" pull"
+alias gaa="git add ."
+alias gc="git commit -m "
+alias new_branch="git checkout -b "
+alias vg="vagrant "
+alias c="code "
+function mygrep { grep -rnIi "$1" . --color; }
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'"

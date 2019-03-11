@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork
+.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias
 
-all: powerline travis kraken docker composer sublime wget slack postman fork
+all: powerline travis kraken docker composer sublime wget slack postman fork alias
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -61,3 +61,7 @@ clean-up:
 	@echo ">>> Clean Up Homebrew Cask"
 	brew cask cleanup
 
+## Copy Local Alias Over
+alias:
+	@echo ">>> Copy Alias File"
+	cp .bash_aliases ~/ && source ~/.bash_aliases
