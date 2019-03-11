@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias
+.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias gcloud
 
-all: powerline travis kraken docker composer sublime wget slack postman fork alias
+all: powerline travis kraken docker composer sublime wget slack postman fork alias gcloud
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -65,3 +65,8 @@ clean-up:
 alias:
 	@echo ">>> Copy Alias File"
 	cp .bash_aliases ~/ && source ~/.bash_aliases
+
+## Install Google Cloud SDK
+gcloud:
+	@echo ">>> Install Google Cloud SDK"
+	brew update && brew cask install google-cloud-sdk
