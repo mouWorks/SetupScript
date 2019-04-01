@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base sublime travis kraken docker composer wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin
+.PHONY : all base sublime travis kraken docker composer wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin copyq npm
 
-all: base travis kraken docker composer sublime wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin
+all: base travis kraken docker composer sublime wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin copyq npm
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -96,7 +96,17 @@ sequelpro:
 	@echo ">>> Install Sequel Pro"
 	brew update && brew cask install sequel-pro
 
+## Zeplin - the tool for designers
 zeplin:
 	@echo ">>> Install Zeplin"
 	brew update && brew cask install zeplin
 
+## ClipBoard stuff
+copyq:
+	@echo ">>> Install CopyQ"
+	brew update && brew cask install copyq
+
+## Front-end stuff
+npm:
+	@echo ">> Install NPM"
+	brew update && brew install npm && npm install gulp
