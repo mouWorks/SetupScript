@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
-.PHONY : all base powerline sublime travis kraken docker composer wget slack postman fork alias gcloud terra
+.PHONY : all base sublime travis kraken docker composer wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin
 
-all: powerline travis kraken docker composer sublime wget slack postman fork alias gcloud terra
+all: base travis kraken docker composer sublime wget slack postman fork alias gcloud terra iterm vagrant virtualbox sequelpro zeplin
 	@echo ">>Now building Everything"
 
 ## Homebrew requires root account
@@ -19,7 +19,7 @@ powerline:
 
 sublime:
 	@echo ">>> Install Sublime Text 3 && Setup shortcut [subl]"
-	brew cask install sublime-text && 
+	brew cask install sublime-text &&
 	ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 ## Travis CI the CI/CD tool
@@ -75,3 +75,28 @@ gcloud:
 terra:
 	@echo ">>> Install Terraform"
 	brew install terraform
+
+## iTerm
+iterm:
+	@echo ">>> Install Iterm2"
+	brew update && brew cask install iterm2
+
+## Virtualbox
+virtualbox:
+	@echo ">>> Install Virtualbox"
+	brew update && brew cask install virtualbox
+
+## Vagrant
+vagrant:
+	@echo ">>> Install Vagrant"
+	brew update && brew cask install vagrant
+
+## SequelPro
+sequelpro:
+	@echo ">>> Install Sequel Pro"
+	brew update && brew cask install sequel-pro
+
+zeplin:
+	@echo ">>> Install Zeplin"
+	brew update && brew cask install zeplin
+
