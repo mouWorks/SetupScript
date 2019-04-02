@@ -37,6 +37,11 @@ docker:
 	@echo ">>> Install Docker Env"
 	brew update && brew cask install docker
 
+## docker-compose
+docker-compose:
+	@echo ">>> Install Docker Compose"
+	brew update && brew install docker-compose
+
 ## Composer
 composer:
 	@echo ">>> Install composer"
